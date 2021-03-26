@@ -1,16 +1,17 @@
 const bcrypt = require('bcryptjs');
 const User = require('../models/User.js');
 const config = require('../config/authConfig.js');
+var jwt = require("jsonwebtoken")
 
 module.exports.signup = (req, res) => {
     //res.status(500).json(req.body);
-    console.log(req.body)
-    const body = json(req.body)
+    //console.log(req.body)
+    //const body = json(req.body)
 
     const newUser = new User({
-        name: body.name,
-        email: body.email,
-        password: body.password
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
     });
 
 
@@ -67,7 +68,8 @@ module.exports.signin = (req, res) => {
             OA: user.OA,
             interviews: user.interviews,
             offers: user.offers,
-            accessToken: token
+            accessToken: token,
+            message: "Login successful"
         })
     });
 }

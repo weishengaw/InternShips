@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 require('./routes/authRoutes')(app);
+require('./routes/updateRoutes')(app);
 
 
 // mongodb setup
