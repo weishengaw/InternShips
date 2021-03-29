@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const App = () => {
-    const API_URL = "https://intern-shippings.herokuapp.com/";
+    const API_URL = "https://intern-shippings.herokuapp.com";
 
     const [loggedIn, setLoggedIn] = useState(false)
     const [email, setEmail] = useState('')
