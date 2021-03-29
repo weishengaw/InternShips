@@ -10,7 +10,7 @@ const app = express();
 
 // setup cors options
 var corsOptions = {
-    origin: "https://weishengaw.github.io/InternShips"
+    origin: "https://weishengaw.github.io"
 }
 app.use(cors(corsOptions))
 app.use(express.json());
