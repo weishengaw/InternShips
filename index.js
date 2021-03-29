@@ -16,6 +16,9 @@ app.use(cors(corsOptions))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.options('./routes/authRoutes', cors(corsOptions))
+app.options('./routes/updateRoutes', cors(corsOptions))
+
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
