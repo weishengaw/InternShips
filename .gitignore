@@ -23,5 +23,4 @@
 /client/yarn-error.log*
 
 /node_modules
-/config/authConfig.js
 

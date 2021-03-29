@@ -1,0 +1,1 @@
+module.exports.secret = process.env.JWT_SECRET || "in-west-philadelphia";
