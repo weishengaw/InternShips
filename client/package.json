@@ -25,7 +25,7 @@
     "deploy": "gh-pages -d build",
     "predeploy": "yarn run build"
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "https://intern-shippings.herokuapp.com/",
   "eslintConfig": {
     "extends": [
       "react-app",
