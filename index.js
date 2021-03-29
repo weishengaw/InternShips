@@ -10,7 +10,7 @@ const app = express();
 
 // setup cors options
 var corsOptions = {
-    origin: "http://localhost:3000"
+    origin: "http://weishengaw.github.io/InternShips"
 }
 app.use(cors(corsOptions))
 app.use(express.json());
