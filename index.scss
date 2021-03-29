@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=IBM+Plex+Sans:wght@600&family=Inconsolata&family=Roboto+Mono&family=Source+Code+Pro&display=swap");
+
+:root {
+  --roundness: 0.25rem;
+  --font: "Roboto Mono";
+  --bg-color: #1c1b1d;
+  --main-color: #deaf9d;
+  --caret-color: #deaf9d;
+  --sub-color: #4e3e3e;
+  --text-color: #f2efed;
+  --error-color: #bf616a;
+  --error-extra-color: #793e44;
+  --colorful-error-color: #e03d4e;
+  --colorful-error-extra-color: #aa2f3b;
+}
+
+::placeholder {
+  color: var(--sub-color);
+  opacity: 1;
+  /* Firefox */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--bg-color);
+  font-family: var(--font);
+  color: var(--main-color);
+  overflow-x: hidden;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-radius: var(--roundness);
+  background: rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-family: var(--font);
+}
+
+
+#top {
+  grid-template-areas: "logo menu config";
+  line-height: 2.3rem;
+  font-size: 2.3rem;
+  /* text-align: center; */
+  transition: 0.25s;
+  padding: 0 5px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr auto;
+  z-index: 2;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+
+
+  .logo {
+    margin-bottom: 0.6rem;
+    white-space: nowrap;
+    user-select: none;
+
+    .top {
+      font-size: 0.65rem;
+      line-height: 0.65rem;
+      margin-bottom: -0.4rem;
+      margin-left: -0.1rem;
+      color: var(--sub-color);
+    }
+
+    .bottom {
+      margin-left: -0.15rem;
+      color: var(--main-color);
+      transition: 0.25s;
+      cursor: pointer;
+    }
+  }
+}
+
+#centerContent {
+  max-width: 1000px;
+  min-width: 500px;
+  margin: 0 auto;
+  display: grid;
+  grid-auto-flow: row;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: center;
+  z-index: 999;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  &.wide125 {
+    max-width: 1250px;
+  }
+  &.wide150 {
+    max-width: 1500px;
+  }
+  &.wide200 {
+    max-width: 2000px;
+  }
+  &.widemax {
+    max-width: unset;
+  }
+}
+
+.button {
+  color: var(--text-color);
+  cursor: pointer;
+  transition: 0.25s;
+  padding: 0.4rem;
+  border-radius: var(--roundness);
+
+  background: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  //display: grid;
+  align-content: center;
+  height: min-content;
+  height: -moz-min-content;
+  line-height: 1rem;
+
+  .fas,
+  .far {
+    margin-right: 0.5rem;
+  }
+
+  &.active {
+    background: var(--main-color);
+    color: var(--bg-color);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--bg-color);
+    background: var(--main-color);
+    outline: none;
+  }
+
+  &.disabled {
+    &:hover {
+      color: var(--sub-color);
+      background: var(--bg-color);
+      cursor: default;
+    }
+    color: var(--sub-color);
+    background: var(--bg-color);
+    cursor: default;
+  }
+}
+
+.pageLogin {
+  display: flex;
+  grid-auto-flow: column;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+
+  .side {
+    display: grid;
+    gap: 0.5rem;
+    justify-content: center;
+
+    &.login {
+      grid-template-areas:
+        "title forgotButton"
+        "form form";
+
+      .title {
+        grid-area: title;
+      }
+
+      // #forgotPasswordButton {
+      //   grid-area: forgotButton;
+      //   font-size: 0.5rem;
+      //   line-height: 0.5rem;
+      //   height: fit-content;
+      //   align-self: center;
+      //   justify-self: right;
+      //   padding: 0.25rem 0;
+      //   color: var(--sub-color);
+      //   cursor: pointer;
+      //   transition: 0.25s;
+
+      //   &:hover {
+      //     color: var(--main-color);
+      //   }
+      // }
+
+      form {
+        grid-area: form;
+
+        #rememberMe {
+          color: var(--sub-color);
+          -moz-user-select: none;
+          user-select: none;
+          cursor: pointer;
+
+          input {
+            margin: 0 !important;
+            cursor: pointer;
+            width: 0;
+            height: 0;
+            display: none;
+
+            & ~ .customCheckbox {
+              width: 12px;
+              height: 12px;
+              background: rgba(0, 0, 0, 0.1);
+              border-radius: 2px;
+              box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+              display: inline-block;
+              margin: 0 0.5rem 0 0.25rem;
+              transition: 0.25s;
+            }
+
+            &:checked ~ .customCheckbox {
+              background: var(--main-color);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  form {
+    display: grid;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .preloader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+    color: var(--main-color);
+    transition: 0.25s;
+  }
+}
+
+#notificationCenter {
+  width: 350px;
+  z-index: 99999999;
+  display: grid;
+  gap: 1rem;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  .history {
+    display: grid;
+    gap: 1rem;
+  }
+  .notif {
+    user-select: none;
+    .icon {
+      color: var(--bg-color);
+      opacity: 0.5;
+      padding: 1rem 1rem;
+      align-items: center;
+      display: grid;
+      font-size: 1.25rem;
+    }
+    .message {
+      padding: 1rem 1rem 1rem 0;
+      .title {
+        color: var(--bg-color);
+        font-size: 0.75em;
+        opacity: 0.5;
+        line-height: 0.75rem;
+      }
+    }
+
+    position: relative;
+    background: var(--sub-color);
+    color: var(--bg-color);
+    display: grid;
+    grid-template-columns: min-content auto min-content;
+    border-radius: var(--roundness);
+    border-width: 0.25rem;
+
+    &.bad {
+      background-color: var(--error-color);
+    }
+
+    &.good {
+      background-color: var(--main-color);
+    }
+
+    &:hover {
+      // opacity: .5;
+      // box-shadow: 0 0 20px rgba(0,0,0,.25);
+      cursor: pointer;
+      &::after {
+        opacity: 1;
+      }
+    }
+    &::after {
+      transition: 0.125s;
+      font-family: "Font Awesome 5 Free";
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      font-weight: 900;
+      content: "\f00d";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      color: var(--bg-color);
+      font-size: 2.5rem;
+      display: grid;
+      /* align-self: center; */
+      align-items: center;
+      text-align: center;
+      border-radius: var(--roundness);
+    }
+  }
+}
+
+.parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 1 / 3 / 2 / 4; }
+.div4 { grid-area: 1 / 4 / 2 / 5; }
+.div5 { grid-area: 1 / 5 / 2 / 6; }

@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/InternShips/static/js/main.00a92dd6.chunk.js",
+    "main.js.map": "/InternShips/static/js/main.00a92dd6.chunk.js.map",
+    "runtime-main.js": "/InternShips/static/js/runtime-main.5acd5b1f.js",
+    "runtime-main.js.map": "/InternShips/static/js/runtime-main.5acd5b1f.js.map",
+    "static/js/2.3586c56f.chunk.js": "/InternShips/static/js/2.3586c56f.chunk.js",
+    "static/js/2.3586c56f.chunk.js.map": "/InternShips/static/js/2.3586c56f.chunk.js.map",
+    "index.html": "/InternShips/index.html",
+    "static/js/2.3586c56f.chunk.js.LICENSE.txt": "/InternShips/static/js/2.3586c56f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5acd5b1f.js",
+    "static/js/2.3586c56f.chunk.js",
+    "static/js/main.00a92dd6.chunk.js"
+  ]
+}
