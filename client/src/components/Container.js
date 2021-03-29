@@ -1,8 +1,4 @@
-import Applied from './Applied.js';
-import Rejected from './Rejected.js';
-import OA from './OA.js';
-import Interviews from './Interviews.js';
-import Offers from './Offers.js';
+import Counter from './Counter.js';
 import { useState } from 'react';
 const Container = ({ update, userInfo }) => {
     const [counters, setCounters] = useState(userInfo);
@@ -35,12 +31,12 @@ const Container = ({ update, userInfo }) => {
 
     
     return (
-        <div>
-                    <Applied onClick={increment} appliedCount={counters.applied}/>
-                    <Rejected onClick = {increment} rejectedCount={counters.rejected}/>
-                    <OA onClick = {increment} OACount={counters.OA}/>
-                    <Interviews onClick = {increment} interviewsCount={counters.interviews}/>
-                    <Offers onClick = {increment} offerCount={counters.offers}/>
+        <div class="parent">
+                    <Counter class="div1" onClick={increment} countType="applied" givenCount={counters.applied}/>
+                    <Counter class="div2" onClick = {increment} countType="rejected" givenCount={counters.rejected}/>
+                    <Counter class="div3" onClick = {increment} countType="OA" givenCount={counters.OA}/>
+                    <Counter class="div4" onClick = {increment} countType="interviews" givenCount={counters.interviews}/>
+                    <Counter class="div5" onClick = {increment} countType="offers" givenCount={counters.offers}/>
         </div>
     )
 }

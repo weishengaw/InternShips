@@ -25,13 +25,16 @@ const Counter = ({ givenCount, onClick, countType }) => {
         <div>
            <h2>{countType}</h2>
            {!setting && <div>{count}</div>}
-           {!setting && <button onClick={onInc}>+1</button>}
-           {!setting && <button onClick={onDec}>-1</button>}
-           {!setting && <button onClick={show}>set</button>}
+           {/* {!setting && <button class="button" onClick={onDec}>-</button>} */}
+           {!setting && <i class="fas fa-minus button" onClick={onDec}></i>}
+           {!setting && <i class="fas fa-plus button" onClick={onInc}></i>}
+           {/* {!setting && <button class="button" onClick={onInc}>+</button>} */}
+           {/* {!setting && <button class="button" onClick={show}>set</button>} */}
+           {!setting && <div class="button" onClick={show} style={{display: "inline"}}>set</div>}
            {setting && <form onSubmit={onSubmit}>
                             <input type='number' placeholder={count} onChange={(e) => setNewNum(e.target.value)} />
-                            <input type='submit' value='Confirm'/>
-                            <button onClick={show}>Cancel</button>
+                            <input type='submit' class="button" value='Confirm'/>
+                            <div class="button" onClick={show} style={{display: "inline"}}>Cancel</div>
                        </form>}
         </div>
     )

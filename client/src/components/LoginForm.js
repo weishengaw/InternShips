@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const LoginForm = ({ onLogin }) => {
+const LoginForm = ({ onLogin, error }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -8,17 +8,17 @@ const LoginForm = ({ onLogin }) => {
         e.preventDefault()
 
         if (!email && !password) {
-            alert('Please enter email and password')
+            error('Please enter email and password.')
             return
         }
 
         if (!email) {
-            alert('Please enter email')
+            error('Please enter email.')
             return
         }
 
         if (!password) {
-            alert('Please enter password')
+            error('Please enter password.')
             return
         }
 
@@ -30,19 +30,19 @@ const LoginForm = ({ onLogin }) => {
     }
 
     return (
-        <form className='login-form' onSubmit={onSubmit}>
-            <h2>Login</h2>
-            <div className='form-control'>
-                <label>Email</label>
-                <input type='text' placeholder='Add email' value={email} onChange={(e) => setEmail(e.target.value)}/>
-            </div>
-            <div className='form-control'>
-                <label>Password</label>
-                <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}/>
-            </div>
-            <input type='submit' value='Login' className='btn btn-block'/>
-            
-        </form>
+        <div class='side'>
+            <form className='login-form' onSubmit={onSubmit}>
+                <div class="title">login</div>
+                <div class='form-control'>
+                    <input type='text' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                </div>
+                <div class='form-control'>
+                    <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+                </div>
+                <input type='submit' value='Login' className='button'/>
+                
+            </form>
+        </div>
 
     )
 }

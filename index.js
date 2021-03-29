@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const config = require('./config/authConfig.js');
 
+require("dotenv").config();
+
 // setup express router
 const app = express();
 
@@ -18,9 +20,13 @@ app.use(express.urlencoded({ extended: true }));
 require('./routes/authRoutes')(app);
 require('./routes/updateRoutes')(app);
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
 
 // mongodb setup
-const CONNECTION_URL = config.mongo;
+const CONNECTION_URL = process.env.MONGODB_URI;
 const PORT = process.env.PORT || 8080;
 
 
