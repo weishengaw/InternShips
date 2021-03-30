@@ -16,6 +16,7 @@ const RegisterForm = ({ onRegister, error }) => {
 
         if (!email.includes("@")) {
             error("Please enter a valid email.")
+            return
         }
 
         if (password !== password2) {
